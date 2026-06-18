@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFix スマホ修理 | データそのまま・安心の国家基準クオリティ</title>
+    <style>
+        :root {
+            --primary: #0a2540;
+            --accent: #00d4b2;
+            --accent-orange: #ff6b6b;
+            --text-main: #333333;
+            --text-sub: #637381;
+            --bg-light: #f4f7fa;
+            --white: #ffffff;
+            --border: #e6ebf1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        .header-cta {
+            background-color: #06c755;
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+        .header-cta:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #10355a 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(0, 212, 178, 0.15);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            border: 1px solid var(--accent);
+        }
+        .hero h1 {
+            font-size: 32px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        .hero h1 span {
+            color: var(--accent);
+        }
+        .hero p {
+            font-size: 17px;
+            color: #b4c6d8;
+            margin-bottom: 35px;
+        }
+
+        /* Section Global */
+        section {
+            padding: 80px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: bold;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 15px;
+            margin-bottom: 50px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Pain Points Section */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .pain-card {
+            background-color: #fff1f1;
+            border-left: 5px solid var(--accent-orange);
+            padding: 25px;
+            border-radius: 4px;
+        }
+        .pain-card h3 {
+            font-size: 16px;
+            color: #c92a2a;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pain-card p {
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        /* Core Commitment (New Quality Section) */
+        .quality-box {
+            background-color: #fffaf0;
+            border: 1px solid #fbd38d;
+            padding: 40px 30px;
+            border-radius: 8px;
+            margin-bottom: 50px;
+        }
+        .quality-box h3 {
+            color: #dd6b20;
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .quality-box p.intro {
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .quality-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+        .quality-item h4 {
+            font-size: 15px;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .quality-item p {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.6;
+        }
+
+        /* Features / Trust Section */
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background-color: var(--white);
+            padding: 35px 30px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .feature-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .feature-card h3 {
+            font-size: 19px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-sub);
+            text-align: left;
+            line-height: 1.7;
+        }
+
+        /* Service Menu */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .service-item {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .service-item .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .service-item h3 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .service-item .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--accent-orange);
+        }
+        .service-item .time {
+            font-size: 13px;
+            color: #e53e3e;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        /* Price Table Custom */
+        .price-wrapper {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .price-table th, .price-table td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .price-table th {
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .price-table tr:nth-child(even) {
+            background-color: #fafbfc;
+        }
+        .price-table td strong {
+            color: var(--primary);
+        }
+        .price-notice {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-top: 15px;
+            text-align: right;
+        }
+
+        /* Privacy Policy Promise Section */
+        .privacy-box {
+            background-color: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .privacy-box h3 {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .privacy-box p {
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* Steps */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 6px;
+            gap: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+        }
+        .step-num {
+            background-color: var(--primary);
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            font-size: 17px;
+            color: var(--primary);
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        .step-content p {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 1.6;
+        }
+
+        /* Contact CTA */
+        .cta-block {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d2b4a 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 30px;
+            border-radius: 8px;
+        }
+        .cta-block h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .cta-block p {
+            color: #b4c6d8;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .btn-line {
+            display: inline-block;
+            background-color: #06c755; /* LINE Official Color */
+            color: var(--white);
+            text-decoration: none;
+            padding: 16px 50px;
+            border-radius: 35px;
+            font-weight: bold;
+            font-size: 19px;
+            box-shadow: 0 6px 16px rgba(6, 199, 85, 0.4);
+            transition: all 0.2s;
+        }
+        .btn-line:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(6, 199, 85, 0.5);
+        }
+        .sub-contact {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #b4c6d8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #051628;
+            color: #b4c6d8;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 24px; }
+            .steps .step-item { flex-direction: column; gap: 12px; }
+            .step-num { width: 34px; height: 34px; font-size: 16px; }
+            .price-table th, .price-table td { padding: 12px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">QuickFix<span>★</span>スマホ修理</div>
+            <!-- 🛠️ 别忘了把下面的 href="#" 换成你的 LINE 链接 -->
+            <a href="https://line.me/ti/p/lzsRlXLMAp" target="_blank" class="header-cta">🟢 LINE無料相談</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-tag">東京エリア密着・即日出張・丁寧な品質保証</div>
+            <h1>大切なデータは消さずにそのまま！<br><span>スマホ修理</span> 確かな技術でスピード解決</h1>
+            <p>画面割れ・液晶不良・バッテリー交換から水没復旧まで。キャリアショップで「初期化が必要」と言われた端末も、諦める前にご相談ください！</p>
+            <!-- 🛠️ 别忘了把下面的 href="#" 换成你的 LINE 链接 -->
+            <a href="https://line.me/ti/p/lzsRlXLMAp" target="_blank" class="btn-line">🟢 LINEで無料見積もり・相談</a>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">こんなスマホのトラブルで困っていませんか？</h2>
+            <p class="section-subtitle">メーカー修理やキャリアショップに持っていく前に、ぜひご確認ください</p>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h3>⚠️ 画面が割れて操作できない</h3>
+                    <p>落として画面がバキバキ、タッチが反応しない、液晶に線が入ってしまって何も見えない状態。</p>
+                </div>
+                <div class="pain-card">
+                    <h3>⚠️ バッテリーが持たない</h3>
+                    <p>充電が一日持たない、10%以上残っているのに急に電源が落ちる、パネルが膨らんできた。</p>
+                </div>
+                <div class="pain-card">
+                    <h3>⚠️ 水に落として電源が入らない</h3>
+                    <p>トイレや海、お風呂に落としてしまった。大切な写真や連絡先だけでも救出したい。</p>
+                </div>
+                <div class="pain-card">
+                    <h3>⚠️ 正規店だとデータが消えると言われた</h3>
+                    <p>公式の修理サポートでは「本体交換になりデータはすべて初期化される」と言われてバックアップも取っていない。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Differentiation Section (New) -->
+    <section class="bg-light" style="padding-bottom: 20px;">
+        <div class="container">
+            <div class="quality-box">
+                <h3>💡 私たちが「15分換屏・5分換电池」のスピード競争をしない理由</h3>
+                <p class="intro">「安くて早ければどこでもいい」という方は、恐れ入りますが他の格安店へお回りください。</p>
+                <div class="quality-grid">
+                    <div class="quality-item">
+                        <h4>① 10項目以上の厳格な全機能テスト</h4>
+                        <p>ただパーツを入れ替えるだけなら10分で終わります。しかし私たちは、修理後に画面のタッチ感度、カメラ、通話、各種センサーなど10項目以上の厳密な動作確認テストを徹底。100%の状態でご返却します。</p>
+                    </div>
+                    <div class="quality-item">
+                        <h4>② 防水・防塵シールの丁寧な再施工</h4>
+                        <p>スマホを一度分解すると、本来の防水性能は完全に失われます。スピード重視の店では省略されがちな「防水・防塵シールの再貼り付け」を、私たちは追加料金なしで1台1台丁寧に実施。修理後の寿命が違います。</p>
+                    </div>
+                    <div class="quality-item">
+                        <h4>③ お客様の目の前での安心データ確認</h4>
+                        <p>お渡しの際は、お客様と一緒に端末を開き、写真、LINE、アプリなどの大切なデータが「修理前の状態のまま」すべて無事であることを確認していただいてから、初めてご精算となります。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Factors -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">QuickFixが選ばれる3つの理由</h2>
+            <p class="section-subtitle">お客様の大切なデバイスを、安心してお任せいただくためのこだわり</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>データはそのままで修理</h3>
+                    <p>メーカー修理のように本体丸ごと交換ではなく、故障したパーツのみをピンポイントで交換・修理するため、写真、LINE、アプリなどの内部データは一切消去されず、修理後すぐに元の状態で使えます。</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⏱️</span>
+                    <h3>厳選された高品質パーツを使用</h3>
+                    <p>単に安いだけの粗悪なコピーパネルは使用しません。色の再現性が高く、タッチのズレが極めて少ない厳選された高品質なパーツのみを採用しているため、修理後も違和感なく快適に操作いただけます。</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>安心の明朗会計＆厳格なプライバシー保護</h3>
+                    <p>修理前の事前診断にて正確な料金をお伝えします。作業後に不明な追加請求が発生することは一切ありません。また、お客様の個人情報や端末内のデータに対するプライバシー保護も徹底しています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section id="prices" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">修理メニュー ＆ 料金目安</h2>
+            <p class="section-subtitle">すべての表記はパーツ代＋作業費コミコミの「税込明朗価格」です</p>
+            
+            <div class="service-grid">
+                <div class="service-item">
+                    <span class="icon">📱</span>
+                    <h3>ガラス割れ修理</h3>
+                    <p class="price">10,800円〜</p>
+                    <p class="time">最短60分</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">🔋</span>
+                    <h3>バッテリー交換</h3>
+                    <p class="price">6,800円〜</p>
+                    <p class="time">最短30分</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">🔌</span>
+                    <h3>ドックコネクタ修理</h3>
+                    <p class="price">7,800円〜</p>
+                    <p class="time">最短40分</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">💧</span>
+                    <h3>水没復旧・基板修理</h3>
+                    <p class="price">12,800円〜</p>
+                    <p class="time">最短120分〜</p>
+                </div>
+            </div>
+
+            <div class="price-wrapper">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>対象機種シリーズ</th>
+                            <th>ガラス割れ・液晶修理</th>
+                            <th>バッテリー交換</th>
+                            <th>その他修理</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>iPhone 14 / 14 Pro シリーズ</strong></td>
+                            <td>19,800円 〜</td>
+                            <td>9,800円 〜</td>
+                            <td>8,800円 〜</td>
+                        </tr>
+                        <tr>
+                            <td><strong>iPhone 13 / 13 Pro シリーズ</strong></td>
+                            <td>15,800円 〜</td>
+                            <td>8,800円 〜</td>
+                            <td>7,800円 〜</td>
+                        </tr>
+                        <tr>
+                            <td><strong>iPhone 12 / 12 Pro シリーズ</strong></td>
+                            <td>13,800円 〜</td>
+                            <td>7,800円 〜</td>
+                            <td>7,800円 〜</td>
+                        </tr>
+                        <tr>
+                            <td><strong>iPhone 11 / 11 Pro シリーズ</strong></td>
+                            <td>11,800円 〜</td>
+                            <td>6,800円 〜</td>
+                            <td>6,800円 〜</td>
+                        </tr>
+                        <tr>
+                            <td><strong>iPhone SE（第2世代 / 第3世代）</strong></td>
+                            <td>9,800円 〜</td>
+                            <td>5,800円 〜</td>
+                            <td>6,800円 〜</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Android / iPad 各種シリーズ</strong></td>
+                            <td>要お見積もり</td>
+                            <td>要お見積もり</td>
+                            <td>要お見積もり</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="price-notice">※上記以外の最新機種、Xperia、Galaxy、Google PixelなどのAndroid端末も幅広く修理対応しております。LINEから正確な型番をお教えいただければ、すぐに見積もりをお出しします。</p>
+
+            <!-- Privacy Policy Box -->
+            <div class="privacy-box">
+                <h3>🔒 個人情報・プライバシー保護に関するお約束</h3>
+                <p>私たちは、お客様のスマートフォンが究極のプライベート空間であることを深く理解しています。修理作業中、動作確認に必要な最低限のシステムテスト（タッチ確認、カメラ起動等）以外の目的で、お客様の写真ライブラリ、各種SNSアプリ、メッセージ内容、閲覧履歴などを閲覧・複製することは一切ありません。安全かつ誠実に作業を行うことを厳粛に宣言いたします。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Flow -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">修理完了までの4ステップ</h2>
+            <p class="section-subtitle">お申し込みからご返却まで、シンプルで迷わない流れです</p>
+            <div class="steps">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>LINEでかんたん無料相談・お見積もり</h3>
+                        <p>下の「LINE相談」ボタンから友達追加していただき、お使いの機種（例：iPhone 12）と現在の状態（例：画面が割れて映らない）をお送りください。スタッフがすぐに概算の修理料金と所要時間をご返信します。ご納得いただければご都合の良い日時をご予約ください。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>端末のお預かり（お持ち込み ＆ 出張対応）</h3>
+                        <p>ご予約いただいた日時に端末をお預かりします。出張エリアであれば、ご自宅やオフィス近く、指定のカフェ等まで技術者が伺い、その場でお預かりすることも可能です。作業前に目の前で最終的な金額を確認します。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>プロの技術者によるスピード修理 ＆ 動作検証</h3>
+                        <p>厳選された高品質な交換パーツを使用し、専門のスタッフが迅速かつ丁寧に修理作業を行います。修理が完了した後は、タッチ感度、液晶の表示状態、カメラ、充電機能などが正常に動作するか厳密なテストを行います。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>仕上がりの確認 ＆ お支払い・ご返却</h3>
+                        <p>新しく生まれ変わったスマートフォンをお客様にお渡しします。データが修理前のまますべて残っていること、不具合が完全に解消されていることを確認していただいた上で、ご精算（現金・各種キャッシュレス対応）となります。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <div class="cta-block">
+                <h2>まずはお気軽にご相談ください！</h2>
+                <p>「私のスマホも直る？」「いくらかかる？」など、傷や画面の写真を一枚送るだけで無料査定・お見積もりが可能です。</p>
+                <!-- 🛠️ 别忘了把下面的 href="#" 换成你的 LINE 链接 -->
+                <a href="https://line.me/ti/p/lzsRlXLMAp" target="_blank" class="btn-line">🟢 LINEで今すぐ無料相談する</a>
+                <div class="sub-contact">※完全予約制・お問い合わせは24時間受付中。お急ぎのトラブルも迅速に対応いたします。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 QuickFix スマホ修理サービス. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
